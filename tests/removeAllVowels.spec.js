@@ -3,8 +3,12 @@ describe('removeAllVowels Filter', function () {
 
 	beforeEach(module('app'));
 
-	beforeEach(inject(function ($injector) {
-		$filter = $injector.get('$filter');
-	}));
+	beforeEach(inject(function ($filter) {
+        removeAllVowels = $filter('removeAllVowels');
+    }));
 
+
+	it('should remove all vowels from the string', function () {
+	        expect(removeAllVowels('test')).toEqual('tst');
+	    });
 });
